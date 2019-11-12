@@ -1,0 +1,40 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.key {
+    width: 60px;
+    height: 60px;
+    background-color: beige;
+    border-radius: 10px;
+    margin: 1px;
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    cursor: pointer;
+}
+
+.key:hover {
+    background-color: rgb(231, 231, 207);
+}
+
+.key--wide {
+    width: 100px;
+}
+
+.key--xwide {
+    width: 200px;
+}
+
+.active {
+    background-color: coral;
+}
+
+.keyboard {
+    text-align: center;
+    user-select: none;
+}
+
+.wrapper {
+    text-align: center;
+}

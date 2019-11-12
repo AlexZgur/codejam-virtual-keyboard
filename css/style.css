@@ -12,6 +12,8 @@ body {
     align-items: center;
     display: inline-flex;
     cursor: pointer;
+    transition-property: background-color;
+    transition-duration: 0.3s;
 }
 
 .key:hover {
@@ -28,6 +30,10 @@ body {
 
 .active {
     background-color: coral;
+}
+
+.active:hover {
+    background-color: #fd9974;
 }
 
 .keyboard {

@@ -86,6 +86,9 @@ for (const [key, value] of Object.entries(keysLayout)) {
     if (['Backspace', 'CapsLock', 'Tab', 'Enter', 'ShiftRight', 'ShiftLeft'].includes(key)) keyElement.classList.add('key--wide');
     if (key == 'Space') keyElement.classList.add('key--xwide');
     keyElement.textContent = value.length > 0 ? value[0] : key;
+    keyElement.onclick = (() => memo.value += keyElement.textContent);
+    keyElement.onmousedown = (() => keyElement.classList.add('active'));
+    keyElement.onmouseup = (() => keyElement.classList.remove('active'));
     if (['Backspace', 'Backslash', 'Enter', 'ShiftRight'].includes(key)) newElement('br', null, keyboard);
 }
 
@@ -113,7 +116,7 @@ function handle(e) {
     if (eventKeys.length > 0) {
         if ((e.type == 'keydown' && !eventKeys[0].classList.contains('active')) ||
             (e.type == 'keyup' && eventKeys[0].classList.contains('active'))) {
-            document.getElementsByClassName(e.code)[0].classList.toggle("active");
+            document.getElementsByClassName(e.code)[0].classList.toggle('active');
         }
 
     }
